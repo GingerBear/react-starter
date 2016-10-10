@@ -1,19 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import App from './components/App/App';
+import Home from './components/Home/Home';
+import ProductIndex from './components/ProductIndex/ProductIndex';
 import About from './components/About/About';
 import NoMatch from './components/NoMatch/NoMatch';
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
 
 ReactDOM.render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>
+      <IndexRoute component={Home}/>
+      <Route path="categories/:category_handle_1/products" component={ProductIndex}/>
       <Route path="about" component={About}/>
       <Route path="*" component={NoMatch}/>
     </Route>
