@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import './Header.css';
+import SearchForm from '../SearchForm/SearchForm'
 
 class NoMatch extends Component {
   render() {
@@ -18,6 +19,8 @@ class NoMatch extends Component {
         <li><Link to={'/categories/hair/products'}>Hair</Link></li>
         <li><Link to={'/categories/men/products'}>Men</Link></li>
       </ul>
+
+      <SearchForm></SearchForm>
 
       </header>
     );

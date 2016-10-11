@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './ProductIndex.css';
+import './SearchResult.css';
 import ProductItem from '../ProductItem/ProductItem.js'
 
-class ProductIndex extends Component {
+class SearchResult extends Component {
   constructor() {
     super();
     this.state = {};
@@ -28,7 +28,7 @@ class ProductIndex extends Component {
       })
     }).catch((ex) => {
       console.log('parsing failed', ex)
-    })
+    });
   }
   renderProduct(product, i) {
     return <ProductItem key={i} data={product}></ProductItem>
@@ -38,11 +38,11 @@ class ProductIndex extends Component {
       return <div>loading products...</div>
     }
     return (
-      <div className="ProductIndex">
+      <div className="SearchResult">
         { this.state.data.products.map(this.renderProduct) }
       </div>
     );
   }
 }
 
-export default ProductIndex;
+export default SearchResult;
