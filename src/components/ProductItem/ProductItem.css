@@ -1,0 +1,23 @@
+.ProductItem {
+  display: inline-block;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.ProductItem img {
+  width: 100%;
+}
+.ProductItem a {
+  color: #555;
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+}
+.ProductItem .detail-1 {
+  height: 60px;
+}
+.ProductItem .brand {
+  font-weight: bold;
+}
+.ProductItem .price {
+  font-size: 15px;
+}

@@ -1,0 +1,7 @@
+.ProductIndex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.ProductIndex .ProductItem {
+  width: 50%;
+}
