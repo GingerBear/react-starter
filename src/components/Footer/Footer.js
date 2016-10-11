@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import './Footer.css';
 
 class Footer extends Component {
   render() {
     return (
       <footer>
-        <p>© 2016 BRANDING BRAND</p>
+        <p>© 2016 BB</p>
         <ul>
           <li><Link to={`/About`}>About</Link></li>
           <li><a href="">Terms</a></li>

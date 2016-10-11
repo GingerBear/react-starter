@@ -3,22 +3,26 @@ import { Link } from 'react-router';
 import './Header.css';
 import SearchForm from '../SearchForm/SearchForm'
 
-class NoMatch extends Component {
+class Header extends Component {
+  handleSlideMenuToggle = () => {
+    // slideMenu is passed down from SlideMenu component
+    this.props.slideMenu.toggle();
+  }
   render() {
     return (
       <header>
 
-      <div className="logo">
-        <Link to={`/`}>fullsite demo</Link>
+      <div className="header">
+        <div className="left">
+          <button className="button" onClick={this.handleSlideMenuToggle}>toggle</button>
+        </div>
+        <div className="middle">
+          <Link className="logo" to={'/'}>fullsite demo</Link>
+        </div>
+        <div className="right">
+          <a href="#">Cart</a>
+        </div>
       </div>
-
-      <ul>
-        <li><Link to={'/categories/makeup/products'}>Makeup</Link></li>
-        <li><Link to={'/categories/skincare/products'}>Skin Care</Link></li>
-        <li><Link to={'/categories/bath-and-body/products'}>Bath Body</Link></li>
-        <li><Link to={'/categories/hair/products'}>Hair</Link></li>
-        <li><Link to={'/categories/men/products'}>Men</Link></li>
-      </ul>
 
       <SearchForm></SearchForm>
 
@@ -27,4 +31,4 @@ class NoMatch extends Component {
   }
 }
 
-export default NoMatch;
+export default Header;

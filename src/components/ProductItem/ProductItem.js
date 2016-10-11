@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
+import Swatches from '../Swatches/Swatches';
 import './ProductItem.css';
 
 class ProductItem extends Component {
@@ -28,7 +30,7 @@ class ProductItem extends Component {
 
     return (
       <div className="ProductItem">
-        <a href={href}>
+        <Link to={href}>
           <img src={imgSrc} alt={data.title} />
           <div className="detail-1">
             <div className="brand">{data.brand.name}</div>
@@ -36,8 +38,9 @@ class ProductItem extends Component {
           </div>
           <span className="detail-2">
             <div className="price">{displayPrice}</div>
+            <Swatches variants={data.variants} showMax={5}></Swatches>
           </span>
-        </a>
+        </Link>
       </div>
     );
   }

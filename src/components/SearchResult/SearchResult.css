@@ -1,0 +1,7 @@
+.SearchResult {
+  display: flex;
+  flex-wrap: wrap;
+}
+.SearchResult .ProductItem {
+  width: 50%;
+}

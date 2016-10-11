@@ -1,0 +1,30 @@
+header {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+.header {
+  display: flex;
+  padding: 10px;
+}
+.header .left {
+  flex: 1;
+  text-align: left;
+}
+.header .right {
+  flex: 1;
+  text-align: right;
+}
+.header .right a {
+  padding: 3px;
+  display: inline-block;
+  color: black;
+}
+.header .middle a {
+  flex: 2;
+  text-align: center;
+}
+.header .logo {
+  font-size: 25px;
+  color: #999;
+  text-decoration: none;
+}

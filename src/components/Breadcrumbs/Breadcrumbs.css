@@ -1,0 +1,13 @@
+.breadcrumbs {
+  list-style: none;
+  padding: 0 10px;
+  margin: 10px 0;
+}
+.breadcrumbs li {
+  display: inline-block;
+}
+.breadcrumbs a {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #555;
+}

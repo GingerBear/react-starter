@@ -16,7 +16,7 @@ class SearchResult extends Component {
     });
   }
   handleSubmit = (e) => {
-    browserHistory.push('/search?q=' + encodeURIComponent(this.state.q));
+    browserHistory.push('/search?q=' + encodeURIComponent(this.state.q || ''));
   }
   handleKeyDown = (e) => {
     if (e.which === ENTER_KEY) {
@@ -25,12 +25,13 @@ class SearchResult extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="searchForm">
         <input
           type="text"
           onKeyDown={this.handleKeyDown}
           onChange={this.handleChange}/>
         <button
+          className="button"
           onClick={this.handleSubmit}>
           Search
         </button>
