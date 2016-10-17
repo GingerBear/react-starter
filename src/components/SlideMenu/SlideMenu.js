@@ -33,6 +33,11 @@ class SlideMenu extends Component {
   toggle() {
     this.setState({ open: !this.state.open });
   }
+  handleClickContent = () => {
+    if (this.state.open) {
+      this.setState({ open: false });
+    }
+  }
   render() {
     var sidebarClass = 'sidebar' + (this.state.open ? ' open' : '');
     var contentClass = 'content' + (this.state.open ? ' open' : '');
@@ -43,7 +48,7 @@ class SlideMenu extends Component {
       contentClass += ' no-animate'
     }
 
-    const childrenWithProps = React.Children.map(this.props.children, (child) =>
+    var childrenWithProps = React.Children.map(this.props.children, (child) =>
       React.cloneElement(child, { slideMenu: this })
     );
 
@@ -59,7 +64,7 @@ class SlideMenu extends Component {
           </ul>
         </div>
 
-        <div className={contentClass}>
+        <div className={contentClass} onClick={this.handleClickContent}>
         { childrenWithProps }
         </div>
       </div>

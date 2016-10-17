@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import Swatches from '../Swatches/Swatches';
 import './ProductItem.css';
+import BazaarVoiceInlineRating from '../BazaarVoice/BazaarVoiceInlineRating';
 
 class ProductItem extends Component {
   toFixed(num) {
@@ -27,6 +28,8 @@ class ProductItem extends Component {
 
     var href = `/products/${data.handle}`;
     var imgSrc = data.images[0] ? data.images[0].src : '';
+    var rating = this.props.showRating ? <BazaarVoiceInlineRating productId={data.id}></BazaarVoiceInlineRating> : '';
+    var swatches = this.props.showSwatches ? <Swatches variants={data.variants} showMax={5}></Swatches> : '';
 
     return (
       <div className="ProductItem">
@@ -38,7 +41,8 @@ class ProductItem extends Component {
           </div>
           <span className="detail-2">
             <div className="price">{displayPrice}</div>
-            <Swatches variants={data.variants} showMax={5}></Swatches>
+            { swatches }
+            { rating }
           </span>
         </Link>
       </div>

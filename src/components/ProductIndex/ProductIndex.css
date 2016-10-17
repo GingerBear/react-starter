@@ -5,3 +5,7 @@
 .ProductIndex .ProductItem {
   width: 50%;
 }
+
+.ProductIndex.list .ProductItem {
+  width: 100%;
+}
